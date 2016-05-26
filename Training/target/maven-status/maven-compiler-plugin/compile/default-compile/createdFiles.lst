@@ -1,0 +1,7 @@
+LOG\TraceLogAspect.class
+Spring\Action.class
+Spring\ActionMovieCatalog.class
+Spring\GeneralMovieCatalog.class
+Spring\MovieCatalogue.class
+Spring\MovieLister.class
+Spring\Main.class

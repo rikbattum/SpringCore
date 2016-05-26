@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="consolePrinter" class="ConsolePrinter" />
+	<bean id="setterDI" class="SetterDI">
+		<property name="printerService" ref="consolePrinter" />
+	</bean>
+	<bean id="construct" class="ConstructorDI">
+		<constructor-arg ref="consolePrinter"></constructor-arg>
+	</bean>
+	<bean id="autowire" class="AutoWireDI" autowire="byType" />
+	<bean id="factoryMethod" class="FactoryMethodInstantiation"
+		factory-method="createInstance">
+		<constructor-arg ref="consolePrinter" />
+		<constructor-arg value="test fac method" />
+	</bean>
+
+	<bean id="nameFactory" class="FactoryBean" />
+	<bean id="names" factory-bean="FactoryBean" factory-method="createNameList" />
+
+</beans> 
